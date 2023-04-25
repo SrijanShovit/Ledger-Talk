@@ -8,17 +8,21 @@ contract Forum {
     
     constructor()  {
         
-    }
+         }
     struct Question{
         string title;
         string description;
-        string askedBy;
-        string photoLink;
-        string comment;
+        address askedBy;
+        string photoURL;
         uint likes;
-        uint dislikes;
+        uint dislikes; 
+        }
+        Question[]  AllQuestions;
+        string[]  AllComments;
+        uint QuestionId;
+        mapping(uint QuestionId=> string[] AllComments) Comments;
 
-    }
+
 
    
 }
