@@ -9,6 +9,8 @@ contract Forum {
     constructor()  {
         
     }
-
+    function like(uint questionId)public{
+        questions[questionId].like++;
+    }
    
 }
