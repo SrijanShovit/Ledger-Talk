@@ -10,5 +10,10 @@ contract Forum {
         
     }
 
+    //Dislikes of the question of the particular questionId is increased
+    function dislike(uint questionId) public {
+        questions[questionId].dislike++;
+    }
+
    
 }
