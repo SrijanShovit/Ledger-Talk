@@ -7,10 +7,10 @@ pragma solidity ^0.8.9;
 contract Forum {
     
     constructor()  {
-        
-    }
+     }
     function like(uint questionId)public{
-        questions[questionId].like++;
+    //ques ID assigned
+        questions[questionId].like++;//likes increasing 
     }
    
 }
