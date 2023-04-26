@@ -5,9 +5,11 @@ pragma solidity ^0.8.9;
 // import "hardhat/console.sol";
 
 contract Forum {
+
+    address public InitialOwner;
     
     constructor()  {
-        
+        InitialOwner=msg.sender;
     }
 
    
