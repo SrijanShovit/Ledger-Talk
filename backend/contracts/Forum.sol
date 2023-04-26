@@ -5,11 +5,13 @@ pragma solidity ^0.8.9;
 // import "hardhat/console.sol";
 
 contract Forum {
+    //addresses of users who can vote
+    address[] public users;
 
-    address public InitialOwner;
     
     constructor()  {
-        InitialOwner=msg.sender;
+        //adding the contract deployer as a valid user who can vote
+        users.push(msg.sender);
     }
 
    
