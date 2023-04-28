@@ -10,9 +10,22 @@ contract Forum {
 
     
     constructor()  {
-        //adding the contract deployer as a valid user who can vote
-        users.push(msg.sender);
+      users.push(msg.sender);
     }
 
-   
+    struct Question{
+        string title;
+        string description;
+        address askedBy;
+        string photoURL;
+        uint likes;
+        uint dislikes; 
+        }
+        
+        Question[]  AllQuestions;
+        string[]  AllComments;
+        uint QuestionId;
+        mapping(uint QuestionId=> string[] AllComments) Comments;
+
+
 }
