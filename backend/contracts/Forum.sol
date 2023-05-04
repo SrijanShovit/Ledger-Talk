@@ -40,19 +40,20 @@ function requestEntry() public {
         uint dislikes;
     }
 
-    // mapping of question to its id
-    mapping (uint => Question) questions;
-    // function returns question text based on its id
-    function getQuestion(uint questionId) public view returns (string memory) {
-        return questions[questionId].description;
-    }
-   
-
-
     Question[] AllQuestions;
     string[] AllComments;
-    uint QuestionId;
+    uint questionId;
     mapping(address Users => uint256[] quesIds) UsersQuestions;
     mapping(uint QuestionId => string[] AllComments) Comments;
+    
+     // function returns question text based on its id
+    function getQuestion(uint questionId) public view returns (string memory) {
+        return AllQuestions[questionId].description;
+    }
+    
+       //Dislikes of the question of the particular questionId is increased
+    function dislike(uint questionId) public {
+        AllQuestions[questionId].dislikes++;//dislikes increasing
+    }
 
 }
