@@ -8,24 +8,22 @@ contract Forum {
     //addresses of users who can vote
     address[] public users;
 
-    
-    constructor()  {
-      users.push(msg.sender);
+    constructor() {
+        users.push(msg.sender);
     }
 
-    struct Question{
+    struct Question {
         string title;
         string description;
         address askedBy;
         string photoURL;
         uint likes;
-        uint dislikes; 
-        }
-        
-        Question[]  AllQuestions;
-        string[]  AllComments;
-        uint QuestionId;
-        mapping(uint QuestionId=> string[] AllComments) Comments;
+        uint dislikes;
+    }
 
-
+    Question[] AllQuestions;
+    string[] AllComments;
+    uint QuestionId;
+    mapping(address Users => uint256[] quesIds) UsersQuestions;
+    mapping(uint QuestionId => string[] AllComments) Comments;
 }
