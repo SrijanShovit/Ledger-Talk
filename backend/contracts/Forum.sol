@@ -51,6 +51,12 @@ function requestEntry() public {
         return AllQuestions[questionId].description;
     }
     
+
+    function like(uint questionId)public{
+           AllQuestions[questionId].likes++;//likes increasing 
+    }
+   
+
        //Dislikes of the question of the particular questionId is increased
     function dislike(uint questionId) public {
         AllQuestions[questionId].dislikes++;//dislikes increasing
