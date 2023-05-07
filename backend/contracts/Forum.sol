@@ -62,4 +62,14 @@ function requestEntry() public {
         AllQuestions[questionId].dislikes++;//dislikes increasing
     }
 
+    function Decision(uint voteCount) view public returns(bool){
+        uint membersCount=users.length;
+        uint var1=voteCount*100;
+        uint var2=67*membersCount;
+        if(var1>=var2){
+            return true;
+        }else{
+            return false;
+        }
+   }
 }
