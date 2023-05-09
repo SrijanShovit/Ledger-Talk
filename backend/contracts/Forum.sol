@@ -40,6 +40,11 @@ function requestEntry() public {
         uint dislikes;
     }
 
+    function getUsersQuestions(address users) external view returns (string[] memory) {
+        return users.getUsersQuestions(users);
+    }
+
+
     Question[] AllQuestions;
     string[] AllComments;
     uint questionId;
