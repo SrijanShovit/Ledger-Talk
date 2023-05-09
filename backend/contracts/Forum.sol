@@ -50,7 +50,21 @@ function requestEntry() public {
     function getQuestion(uint questionId) public view returns (string memory) {
         return AllQuestions[questionId].description;
     }
-    
+    function postNewQuestion(string memory title, string memory description, string memory photoURL) public {
+        // Create a new Question struct and add it to the AllQuestions array
+        Question memory newQuestion = Question(
+            title, 
+            description, 
+            msg.sender, //address of askedBy;
+            photoURL, 
+            0, 
+            0);
+        AllQuestions.push(newQuestion);
+        
+        // Add the question ID to the user's list of questions
+        uint newQuestionId = AllQuestions.length - 1;
+        UsersQuestions[msg.sender].push(newQuestionId);
+    }
 
     function like(uint questionId)public{
            AllQuestions[questionId].likes++;//likes increasing 
